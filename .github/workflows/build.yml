@@ -22,14 +22,14 @@ jobs:
       - name: Setup Android
         uses: android-actions/setup-android@v3
 
-      - name: Install SDK
+      - name: Install Android SDK
         run: |
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
-      - name: Extract project
+      - name: Extract Android project
         run: |
           unzip -q Ranked_Draft_Simulator_ANDROID_V28_NEW.zip -d /tmp/project
-          cp -a /tmp/project/. ./
+          cp -a /tmp/project/apk_project/. ./
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
